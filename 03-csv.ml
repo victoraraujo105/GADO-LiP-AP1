@@ -24,7 +24,7 @@ let processar_arquivo input_path output_path =
     with
     | End_of_file -> ()
     | Failure s -> f ()
-  in f ()
+  in f () ; close_in input_file ; close_out output_file
 ;;
     
 processar_arquivo "in" "out" ;;
