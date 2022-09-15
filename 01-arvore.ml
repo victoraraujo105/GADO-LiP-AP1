@@ -14,8 +14,7 @@ let rec remover e raiz =
   let rec inserir esq dir = 
     match esq with
     | Vazia -> dir
-    | No (esq_esq, v, Vazia) -> No (esq_esq, v, dir) 
-    | No (_, _, esq_dir) -> inserir esq_dir dir
+    | No (esq_esq, v, esq_dir) -> No (esq_esq, v, inserir esq_dir dir)
   in
   match raiz with
   | Vazia -> Vazia
